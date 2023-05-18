@@ -5,6 +5,8 @@ import (
     "html/template"
     "log"
     "net/smtp"
+    "os"
+    "sentiment"
 )
 
 func main() {
@@ -26,9 +28,29 @@ func main() {
     // read from stdin
     msg, err := ioutil.ReadAll(os.Stdin)
     if err != nil {
-        log.Fatal(err)
+package main
+
+
+func main() {
+    // Get the email content from the command line.
+    emailContent, err := os.ReadFile(os.Args[1])
+    if err != nil {
+        fmt.Println(err)
+        return
     }
 
+    // Create a sentiment analysis object.
+    sentimentAnalyzer := sentiment.New()
+
+    // Analyze the email content.
+    sentiment, score := sentimentAnalyzer.Analyze(emailContent)
+
+    // Print the sentiment and score.
+    fmt.Printf("Sentiment: %s\nScore: %f\n", sentiment, score)
+}
+    }
+
+    
     // create a new email
     e := email.NewEmail()
     e.From = "MyEmail@gmail.com"

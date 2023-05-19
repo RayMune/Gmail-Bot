@@ -37,7 +37,7 @@ Before running the program, ensure that you have the following:
 
 2. The program will analyze the sentiment of the email content and print the sentiment and score to the console.
 
-3. An automatic response will be sent to the recipient's email address specified in the code. Ensure you have provided valid Gmail credentials and recipient email address.
+3. An automatic response will be sent to the recipient's email address specified in the code. Ensure you have provided valid Gmail credentials and valid recipient email address.
 
 ## Customization
 
